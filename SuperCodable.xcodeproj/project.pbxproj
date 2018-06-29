@@ -12,6 +12,9 @@
 		856813C320E5D991005F9FA3 /* SuperCodable.h in Headers */ = {isa = PBXBuildFile; fileRef = 856813B520E5D990005F9FA3 /* SuperCodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		856813CF20E5DB7D005F9FA3 /* DictionaryConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813CE20E5DB7D005F9FA3 /* DictionaryConvert.swift */; };
 		85DC7B4020E5E28800D82BB4 /* SuperCodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */; };
+		85DC7B4420E6079700D82BB4 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4320E6079700D82BB4 /* JSONValue.swift */; };
+		85DC7B4620E6233E00D82BB4 /* JSONValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4520E6233E00D82BB4 /* JSONValueTests.swift */; };
+		85DC7B4820E634D500D82BB4 /* JSONValue+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4720E634D500D82BB4 /* JSONValue+Value.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,9 @@
 		856813C220E5D991005F9FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		856813CE20E5DB7D005F9FA3 /* DictionaryConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvert.swift; sourceTree = "<group>"; };
 		85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCodableError.swift; sourceTree = "<group>"; };
+		85DC7B4320E6079700D82BB4 /* JSONValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONValue.swift; sourceTree = "<group>"; };
+		85DC7B4520E6233E00D82BB4 /* JSONValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONValueTests.swift; sourceTree = "<group>"; };
+		85DC7B4720E634D500D82BB4 /* JSONValue+Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONValue+Value.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,8 @@
 				856813B620E5D990005F9FA3 /* Info.plist */,
 				856813CE20E5DB7D005F9FA3 /* DictionaryConvert.swift */,
 				85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */,
+				85DC7B4320E6079700D82BB4 /* JSONValue.swift */,
+				85DC7B4720E634D500D82BB4 /* JSONValue+Value.swift */,
 			);
 			path = SuperCodable;
 			sourceTree = "<group>";
@@ -86,8 +94,9 @@
 		856813BF20E5D991005F9FA3 /* SuperCodableTests */ = {
 			isa = PBXGroup;
 			children = (
-				856813C020E5D991005F9FA3 /* DictionaryConvert.swift */,
 				856813C220E5D991005F9FA3 /* Info.plist */,
+				856813C020E5D991005F9FA3 /* DictionaryConvert.swift */,
+				85DC7B4520E6233E00D82BB4 /* JSONValueTests.swift */,
 			);
 			path = SuperCodableTests;
 			sourceTree = "<group>";
@@ -201,8 +210,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85DC7B4420E6079700D82BB4 /* JSONValue.swift in Sources */,
 				856813CF20E5DB7D005F9FA3 /* DictionaryConvert.swift in Sources */,
 				85DC7B4020E5E28800D82BB4 /* SuperCodableError.swift in Sources */,
+				85DC7B4820E634D500D82BB4 /* JSONValue+Value.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				856813C120E5D991005F9FA3 /* DictionaryConvert.swift in Sources */,
+				85DC7B4620E6233E00D82BB4 /* JSONValueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
