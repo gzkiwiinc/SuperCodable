@@ -14,7 +14,7 @@ extension Encodable {
     public func toJSON() throws -> [String: Any] {
         let data = try JSONEncoder().encode(self)
         guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
-            throw NSError()
+            throw SuperCodableError.mappingJSONFailed
         }
         return dictionary
     }
