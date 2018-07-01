@@ -66,12 +66,6 @@ extension JSONValue {
     
     public var compactDictionary: [String: Any]? {
         guard let rawDict = value as? [String: Any?] else { return  nil }
-        var dict = [String: Any]()
-        for (k,v) in rawDict {
-            if let v = v {
-                dict[k] = v
-            }
-        }
-        return dict
+        return rawDict.compactValues()
     }
 }
