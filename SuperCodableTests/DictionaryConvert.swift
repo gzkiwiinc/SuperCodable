@@ -28,4 +28,9 @@ class DictionaryConvert: XCTestCase {
         XCTAssert(model.name == "kiwi")
     }
     
+    func testOptionalValueFilter() {
+        let dict: [String: Any?] = ["1": nil, "2": 2]
+        let newDict = dict.compactValues()
+        XCTAssert(newDict.count == 1)
+    }
 }
