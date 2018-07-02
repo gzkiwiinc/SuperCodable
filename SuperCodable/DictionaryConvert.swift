@@ -20,7 +20,7 @@ extension Encodable {
     }
     
     /// Returns the JSON Dictionary for the object. if error happend return nil
-    public func toJSONSafety() -> [String: Any]? {
+    public func toJSONSafely() -> [String: Any]? {
         return try? self.toJSON()
     }
 }
