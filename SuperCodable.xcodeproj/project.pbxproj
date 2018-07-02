@@ -12,6 +12,7 @@
 		856813C120E5D991005F9FA3 /* DictionaryConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813C020E5D991005F9FA3 /* DictionaryConvert.swift */; };
 		856813C320E5D991005F9FA3 /* SuperCodable.h in Headers */ = {isa = PBXBuildFile; fileRef = 856813B520E5D990005F9FA3 /* SuperCodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		856813CF20E5DB7D005F9FA3 /* DictionaryConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813CE20E5DB7D005F9FA3 /* DictionaryConvert.swift */; };
+		8599EE7F20E9C63700E02806 /* ModelMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */; };
 		85DC7B4020E5E28800D82BB4 /* SuperCodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */; };
 		85DC7B4420E6079700D82BB4 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4320E6079700D82BB4 /* JSONValue.swift */; };
 		85DC7B4620E6233E00D82BB4 /* JSONValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4520E6233E00D82BB4 /* JSONValueTests.swift */; };
@@ -37,6 +38,7 @@
 		856813C020E5D991005F9FA3 /* DictionaryConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvert.swift; sourceTree = "<group>"; };
 		856813C220E5D991005F9FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		856813CE20E5DB7D005F9FA3 /* DictionaryConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvert.swift; sourceTree = "<group>"; };
+		8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMappingTests.swift; sourceTree = "<group>"; };
 		85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCodableError.swift; sourceTree = "<group>"; };
 		85DC7B4320E6079700D82BB4 /* JSONValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONValue.swift; sourceTree = "<group>"; };
 		85DC7B4520E6233E00D82BB4 /* JSONValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONValueTests.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				856813C220E5D991005F9FA3 /* Info.plist */,
 				856813C020E5D991005F9FA3 /* DictionaryConvert.swift */,
 				85DC7B4520E6233E00D82BB4 /* JSONValueTests.swift */,
+				8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */,
 			);
 			path = SuperCodableTests;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			files = (
 				856813C120E5D991005F9FA3 /* DictionaryConvert.swift in Sources */,
 				85DC7B4620E6233E00D82BB4 /* JSONValueTests.swift in Sources */,
+				8599EE7F20E9C63700E02806 /* ModelMappingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
