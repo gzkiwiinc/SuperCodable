@@ -11,11 +11,7 @@ import Foundation
 extension DecodableValue {
     
     public var intValue: Int? {
-        if let value = int64Value {
-            return Int(exactly: value)
-        } else {
-            return nil
-        }
+        return value as? Int
     }
     
     public var int64Value: Int64? {
@@ -48,6 +44,8 @@ extension DecodableValue {
             return stringValue
         case .int(let intValue):
             return intValue
+        case .int64(let int64Value):
+            return int64Value
         case .uint(let uintValue):
             return uintValue
         case .double(let doubleValue):

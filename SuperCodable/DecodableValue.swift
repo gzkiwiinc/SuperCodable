@@ -14,7 +14,8 @@ public enum DecodableValue: Decodable {
     case null
     case bool(Bool)
     case string(String)
-    case int(Int64)
+    case int(Int)
+    case int64(Int64)
     case uint(UInt)
     case double(Double)
     
@@ -25,8 +26,10 @@ public enum DecodableValue: Decodable {
             self = .null
         } else if let bool = try? container.decode(Bool.self) {
             self = .bool(bool)
-        } else if let int = try? container.decode(Int64.self) {
+        } else if let int = try? container.decode(Int.self) {
             self = .int(int)
+        } else if let int64 = try? container.decode(Int64.self) {
+            self = .int64(int64)
         } else if let uint = try? container.decode(UInt.self) {
             self = .uint(uint)
         } else if let double = try? container.decode(Double.self) {
