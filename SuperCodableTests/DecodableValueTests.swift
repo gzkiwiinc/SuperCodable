@@ -26,14 +26,14 @@ class JSONValueTests: XCTestCase {
     
     struct ServerResponse: Decodable {
         let code: Int
-        let data: [String: JSONValue]
+        let data: [String: DecodableValue]
     }
     
     func testAnyDcitionaryParse() {
         let decoder = JSONDecoder()
         let response = try! decoder.decode(ServerResponse.self, from: json)
         let userData = response.data["user"]!
-        guard case JSONValue.dictionary(let dict) = userData else {
+        guard case DecodableValue.dictionary(let dict) = userData else {
             XCTFail()
             return
         }
@@ -41,22 +41,22 @@ class JSONValueTests: XCTestCase {
     }
 
     func testGetReuglarValue() {
-        let bool = JSONValue.bool(true)
+        let bool = DecodableValue.bool(true)
         XCTAssert(bool.boolValue! == true)
         
-        let string = JSONValue.string("kiwi")
+        let string = DecodableValue.string("kiwi")
         XCTAssert(string.stringValue! == "kiwi")
         
-        let int = JSONValue.int(100)
+        let int = DecodableValue.int(100)
         XCTAssert(int.intValue! == 100)
         
-        let uint = JSONValue.uint(10)
+        let uint = DecodableValue.uint(10)
         XCTAssert(uint.uintValue! == 10)
         
-        let double = JSONValue.double(1.01)
+        let double = DecodableValue.double(1.01)
         XCTAssert(double.doubleValue! == 1.01)
         
-        let nilValue = JSONValue.null
+        let nilValue = DecodableValue.null
         XCTAssert(nilValue.value == nil)
     }
     
@@ -82,7 +82,7 @@ class JSONValueTests: XCTestCase {
 ]
 """.data(using: .utf8)!
         let decoder = JSONDecoder()
-        let value = try! decoder.decode(JSONValue.self, from: arrayJson)
+        let value = try! decoder.decode(DecodableValue.self, from: arrayJson)
         XCTAssert(value.compactArray!.count == 4)
     }
     
@@ -95,7 +95,7 @@ class JSONValueTests: XCTestCase {
 }
 """.data(using: .utf8)!
         let decoder = JSONDecoder()
-        let value = try! decoder.decode(JSONValue.self, from: dictJson)
+        let value = try! decoder.decode(DecodableValue.self, from: dictJson)
         let dict = value.compactDictionary!
         XCTAssert(dict.count == 2)
     }

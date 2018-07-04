@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum JSONValue: Decodable {
-    indirect case dictionary([String: JSONValue])
-    indirect case array([JSONValue])
+public enum DecodableValue: Decodable {
+    indirect case dictionary([String: DecodableValue])
+    indirect case array([DecodableValue])
     case null
     case bool(Bool)
     case string(String)
@@ -33,9 +33,9 @@ public enum JSONValue: Decodable {
             self = .double(double)
         } else if let string = try? container.decode(String.self) {
             self = .string(string)
-        } else if let array = try? container.decode([JSONValue].self) {
+        } else if let array = try? container.decode([DecodableValue].self) {
             self = .array(array)
-        } else if let dictionary = try? container.decode([String: JSONValue].self) {
+        } else if let dictionary = try? container.decode([String: DecodableValue].self) {
             self = .dictionary(dictionary)
         } else {
             throw DecodingError.dataCorruptedError(in: container, debugDescription: "value cannot be decoded")

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension JSONValue {
+extension DecodableValue {
     
     public var intValue: Int? {
         if let value = int64Value {
