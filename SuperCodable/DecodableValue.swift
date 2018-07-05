@@ -44,6 +44,28 @@ public enum DecodableValue: Decodable {
             throw DecodingError.dataCorruptedError(in: container, debugDescription: "value cannot be decoded")
         }
     }
+    
+    /// The Key paramater can be a period separated string (ex. "distance.value") to access sub objects.
+    public subscript(key: String) -> DecodableValue? {
+        guard case .dictionary(let dict) = self else { return nil }
+        let delimiter = "."
+        let nested = key.contains(delimiter)
+        if nested {
+            return valueFor(keyPathComponents: ArraySlice(key.components(separatedBy: delimiter)), in: dict)
+        } else {
+            return dict[key]
+        }
+    }
+    
+    func valueFor(keyPathComponents: ArraySlice<String>, in dict: [String: DecodableValue]) -> DecodableValue? {
+        guard let keyPath = keyPathComponents.first,
+            let firstValue = dict[keyPath] else { return nil }
+        guard keyPathComponents.count > 1 else {
+            return firstValue
+        }
+        guard case .dictionary(let nestedDict) = firstValue else { return nil }
+        return valueFor(keyPathComponents: keyPathComponents.dropFirst(), in: nestedDict)
+    }
 }
 
 

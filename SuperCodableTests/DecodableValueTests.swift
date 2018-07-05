@@ -99,4 +99,12 @@ class JSONValueTests: XCTestCase {
         let dict = value.compactDictionary!
         XCTAssert(dict.count == 2)
     }
+    
+    func testSubscript() {
+        let singleDict: [String: DecodableValue] = ["name": DecodableValue.string("kyle")]
+        let signleDecodable = DecodableValue.dictionary(singleDict)
+        XCTAssert(signleDecodable["name"]!.stringValue! == "kyle")
+        let nestData = DecodableValue.dictionary(["data": signleDecodable])
+        XCTAssert(nestData["data.name"]!.stringValue! == "kyle")
+    }
 }
