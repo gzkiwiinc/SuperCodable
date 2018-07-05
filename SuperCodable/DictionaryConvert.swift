@@ -13,10 +13,8 @@ extension Encodable {
     /// Returns the JSON Dictionary for the object
     public func toJSON() throws -> [String: Any] {
         let data = try JSONEncoder().encode(self)
-        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
-            throw SuperCodableError.mappingJSONFailed
-        }
-        return dictionary
+        let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+        return dictionary ?? [:]
     }
     
     /// Returns the JSON Dictionary for the object. if error happend return nil
