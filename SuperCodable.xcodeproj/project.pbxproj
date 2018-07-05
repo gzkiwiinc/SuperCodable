@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8524489720EDF0A100CF7649 /* Dictionary+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524489620EDF0A100CF7649 /* Dictionary+Decodable.swift */; };
 		8558C60C20E90B2900AB7B13 /* Dictionary+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558C60B20E90B2900AB7B13 /* Dictionary+Helper.swift */; };
 		856813BC20E5D991005F9FA3 /* SuperCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856813B220E5D990005F9FA3 /* SuperCodable.framework */; };
 		856813C120E5D991005F9FA3 /* DictionaryConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813C020E5D991005F9FA3 /* DictionaryConvert.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8524489620EDF0A100CF7649 /* Dictionary+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Decodable.swift"; sourceTree = "<group>"; };
 		8558C60B20E90B2900AB7B13 /* Dictionary+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Helper.swift"; sourceTree = "<group>"; };
 		856813B220E5D990005F9FA3 /* SuperCodable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperCodable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		856813B520E5D990005F9FA3 /* SuperCodable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperCodable.h; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				85DC7B4320E6079700D82BB4 /* DecodableValue.swift */,
 				85DC7B4720E634D500D82BB4 /* DecodableValue+Value.swift */,
 				8558C60B20E90B2900AB7B13 /* Dictionary+Helper.swift */,
+				8524489620EDF0A100CF7649 /* Dictionary+Decodable.swift */,
 			);
 			path = SuperCodable;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85DC7B4420E6079700D82BB4 /* DecodableValue.swift in Sources */,
+				8524489720EDF0A100CF7649 /* Dictionary+Decodable.swift in Sources */,
 				856813CF20E5DB7D005F9FA3 /* DictionaryConvert.swift in Sources */,
 				85DC7B4020E5E28800D82BB4 /* SuperCodableError.swift in Sources */,
 				8558C60C20E90B2900AB7B13 /* Dictionary+Helper.swift in Sources */,

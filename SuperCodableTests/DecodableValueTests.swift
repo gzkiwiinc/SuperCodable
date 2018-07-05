@@ -107,4 +107,11 @@ class JSONValueTests: XCTestCase {
         let nestData = DecodableValue.dictionary(["data": signleDecodable])
         XCTAssert(nestData["data.name"]!.stringValue! == "kyle")
     }
+    
+    func testKeypathInDictionary() {
+        let singleDict: [String: DecodableValue] = ["name": DecodableValue.string("kyle")]
+        let signleDecodable = DecodableValue.dictionary(singleDict)
+        let nestData: [String: DecodableValue] = ["data": signleDecodable]
+        XCTAssert(nestData.valueFor(key: "data.name")!.stringValue! == "kyle")
+    }
 }
