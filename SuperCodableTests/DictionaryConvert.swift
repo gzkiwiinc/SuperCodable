@@ -24,7 +24,7 @@ class DictionaryConvert: XCTestCase {
 
     func testInitFromDictoonary() {
         let dict: [String: Any] = ["name": "kiwi", "age": 1]
-        let model = try! TestModel(JSON: dict)
+        let model = TestModel(JSON: dict)!
         XCTAssert(model.name == "kiwi")
     }
     

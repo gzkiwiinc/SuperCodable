@@ -36,7 +36,7 @@ class ModelMappingTests: XCTestCase {
         let decoder = JSONDecoder()
         let value = try! decoder.decode(DecodableValue.self, from: json)
         let dict = value.compactDictionary!
-        let mission = try! MissionModel(JSON: dict)
+        let mission = MissionModel(JSON: dict)!
         XCTAssert(mission.content.hotpointRoutes.first!.lines.count == 4)
     }
     

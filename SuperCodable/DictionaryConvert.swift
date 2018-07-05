@@ -28,12 +28,13 @@ extension Encodable {
 extension Decodable {
     
     /// Initializes object from a JSON Dictionary
-    public init(JSON: [String: Any]) throws {
+    public init?(JSON: [String: Any]) {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: JSON, options: [])
             self = try JSONDecoder().decode(Self.self, from: jsonData)
         } catch {
-            throw error
+            return nil
         }
     }
+
 }
