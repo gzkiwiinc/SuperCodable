@@ -26,12 +26,12 @@ public enum DecodableValue: Decodable {
             self = .null
         } else if let bool = try? container.decode(Bool.self) {
             self = .bool(bool)
+        } else if let uint = try? container.decode(UInt.self) {
+            self = .uint(uint)
         } else if let int = try? container.decode(Int.self) {
             self = .int(int)
         } else if let int64 = try? container.decode(Int64.self) {
             self = .int64(int64)
-        } else if let uint = try? container.decode(UInt.self) {
-            self = .uint(uint)
         } else if let double = try? container.decode(Double.self) {
             self = .double(double)
         } else if let string = try? container.decode(String.self) {
