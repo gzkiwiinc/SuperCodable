@@ -21,6 +21,22 @@ extension Encodable {
     public func toJSONSafely() -> [String: Any]? {
         return try? self.toJSON()
     }
+    
+    /// if parse error, return empty string
+    public func toJSONStringSafely(prettyPrint: Bool = false) -> String? {
+        do {
+            return try toJSONString(prettyPrint: prettyPrint)
+        } catch  {
+            return nil
+        }
+    }
+    
+    public func toJSONString(prettyPrint: Bool = false) throws -> String? {
+        let options: JSONSerialization.WritingOptions = prettyPrint ? .prettyPrinted : []
+        let json = try toJSON()
+        let jsonData = try JSONSerialization.data(withJSONObject: json, options: options)
+        return String(data: jsonData, encoding: String.Encoding.utf8)
+    }
 }
 
 extension Decodable {
@@ -33,6 +49,19 @@ extension Decodable {
         } catch {
             return nil
         }
+    }
+    
+    public init?(JSONString: String, prettyPrint: Bool = false) {
+        guard let data = JSONString.data(using: String.Encoding.utf8, allowLossyConversion: true) else { return nil }
+        do {
+            let JSON = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+            let options: JSONSerialization.WritingOptions = prettyPrint ? .prettyPrinted : []
+            let jsonData = try JSONSerialization.data(withJSONObject: JSON, options: options)
+            self = try JSONDecoder().decode(Self.self, from: jsonData)
+        } catch {
+            return nil
+        }
+
     }
 
 }

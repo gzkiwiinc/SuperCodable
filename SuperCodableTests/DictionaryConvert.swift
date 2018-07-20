@@ -33,4 +33,12 @@ class DictionaryConvert: XCTestCase {
         let newDict = dict.compactValues()
         XCTAssert(newDict.count == 1)
     }
+    
+    func testJSONString() {
+        let model = TestModel(name: "jsonString", age: 1)
+        let jsonString = model.toJSONStringSafely()!
+        let parseModel = TestModel(JSONString: jsonString)!
+        XCTAssert(model.name == parseModel.name)
+
+    }
 }
