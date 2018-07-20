@@ -12,7 +12,7 @@
 		856813BC20E5D991005F9FA3 /* SuperCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856813B220E5D990005F9FA3 /* SuperCodable.framework */; };
 		856813C120E5D991005F9FA3 /* DictionaryConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813C020E5D991005F9FA3 /* DictionaryConvert.swift */; };
 		856813C320E5D991005F9FA3 /* SuperCodable.h in Headers */ = {isa = PBXBuildFile; fileRef = 856813B520E5D990005F9FA3 /* SuperCodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		856813CF20E5DB7D005F9FA3 /* DictionaryConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813CE20E5DB7D005F9FA3 /* DictionaryConvert.swift */; };
+		856813CF20E5DB7D005F9FA3 /* JSONConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813CE20E5DB7D005F9FA3 /* JSONConvert.swift */; };
 		8599EE7F20E9C63700E02806 /* ModelMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */; };
 		85DC7B4020E5E28800D82BB4 /* SuperCodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */; };
 		85DC7B4420E6079700D82BB4 /* DecodableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4320E6079700D82BB4 /* DecodableValue.swift */; };
@@ -39,7 +39,7 @@
 		856813BB20E5D991005F9FA3 /* SuperCodableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCodableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		856813C020E5D991005F9FA3 /* DictionaryConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvert.swift; sourceTree = "<group>"; };
 		856813C220E5D991005F9FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		856813CE20E5DB7D005F9FA3 /* DictionaryConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvert.swift; sourceTree = "<group>"; };
+		856813CE20E5DB7D005F9FA3 /* JSONConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvert.swift; sourceTree = "<group>"; };
 		8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMappingTests.swift; sourceTree = "<group>"; };
 		85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCodableError.swift; sourceTree = "<group>"; };
 		85DC7B4320E6079700D82BB4 /* DecodableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableValue.swift; sourceTree = "<group>"; };
@@ -89,12 +89,12 @@
 			children = (
 				856813B520E5D990005F9FA3 /* SuperCodable.h */,
 				856813B620E5D990005F9FA3 /* Info.plist */,
-				856813CE20E5DB7D005F9FA3 /* DictionaryConvert.swift */,
 				85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */,
 				85DC7B4320E6079700D82BB4 /* DecodableValue.swift */,
 				85DC7B4720E634D500D82BB4 /* DecodableValue+Value.swift */,
 				8558C60B20E90B2900AB7B13 /* Dictionary+Helper.swift */,
 				8524489620EDF0A100CF7649 /* Dictionary+Decodable.swift */,
+				856813CE20E5DB7D005F9FA3 /* JSONConvert.swift */,
 			);
 			path = SuperCodable;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			files = (
 				85DC7B4420E6079700D82BB4 /* DecodableValue.swift in Sources */,
 				8524489720EDF0A100CF7649 /* Dictionary+Decodable.swift in Sources */,
-				856813CF20E5DB7D005F9FA3 /* DictionaryConvert.swift in Sources */,
+				856813CF20E5DB7D005F9FA3 /* JSONConvert.swift in Sources */,
 				85DC7B4020E5E28800D82BB4 /* SuperCodableError.swift in Sources */,
 				8558C60C20E90B2900AB7B13 /* Dictionary+Helper.swift in Sources */,
 				85DC7B4820E634D500D82BB4 /* DecodableValue+Value.swift in Sources */,
