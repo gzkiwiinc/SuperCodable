@@ -11,6 +11,7 @@ import Foundation
 public enum SuperCodableError: LocalizedError {
     case mappingJSONFailed
     case encodingDataFailed(Any)
+    case transformFaild(errorDescription: String)
     
     var errorDescription: String {
         switch self {
@@ -18,6 +19,8 @@ public enum SuperCodableError: LocalizedError {
             return "mapping encoded data to json failed"
         case .encodingDataFailed:
             return "given value encoding failed"
+        case .transformFaild(errorDescription: let message):
+            return "transfrom value to decodable type failed:\(message)"
         }
     }
 }
