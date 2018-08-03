@@ -25,7 +25,7 @@ class DictionaryConvert: XCTestCase {
     func testInitFromDictoonary() {
         let dict: [String: Any] = ["name": "kiwi", "age": 1]
         do {
-            let model = try TestModel(JSON: dict)!
+            let model = try TestModel(JSON: dict)
             XCTAssert(model.name == "kiwi")
         } catch {
             print(error)
@@ -42,7 +42,7 @@ class DictionaryConvert: XCTestCase {
     func testJSONString() {
         let model = TestModel(name: "jsonString", age: 1)
         let jsonString = model.toJSONStringSafely()!
-        let parseModel = try! TestModel(JSONString: jsonString)!
+        let parseModel = try! TestModel(JSONString: jsonString)
         XCTAssert(model.name == parseModel.name)
 
     }

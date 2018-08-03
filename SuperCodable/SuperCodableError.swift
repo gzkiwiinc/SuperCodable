@@ -10,11 +10,14 @@ import Foundation
 
 public enum SuperCodableError: LocalizedError {
     case mappingJSONFailed
+    case encodingDataFailed(Any)
     
     var errorDescription: String {
         switch self {
         case .mappingJSONFailed:
             return "mapping encoded data to json failed"
+        case .encodingDataFailed:
+            return "given value encoding failed"
         }
     }
 }
