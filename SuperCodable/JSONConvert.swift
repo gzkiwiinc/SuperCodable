@@ -42,26 +42,19 @@ extension Encodable {
 extension Decodable {
     
     /// Initializes object from a JSON Dictionary
-    public init?(JSON: [String: Any]) {
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: JSON, options: [])
-            self = try JSONDecoder().decode(Self.self, from: jsonData)
-        } catch {
-            return nil
-        }
+    public init(JSON: [String: Any]) throws {
+        let jsonData = try JSONSerialization.data(withJSONObject: JSON, options: [])
+        self = try JSONDecoder().decode(Self.self, from: jsonData)
     }
     
-    public init?(JSONString: String, prettyPrint: Bool = false) {
-        guard let data = JSONString.data(using: String.Encoding.utf8, allowLossyConversion: true) else { return nil }
-        do {
-            let JSON = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-            let options: JSONSerialization.WritingOptions = prettyPrint ? .prettyPrinted : []
-            let jsonData = try JSONSerialization.data(withJSONObject: JSON, options: options)
-            self = try JSONDecoder().decode(Self.self, from: jsonData)
-        } catch {
-            return nil
+    public init(JSONString: String, prettyPrint: Bool = false) throws {
+        guard let data = JSONString.data(using: String.Encoding.utf8, allowLossyConversion: true) else {
+            throw SuperCodableError.encodingDataFailed(JSONString)
         }
-
+        let JSON = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+        let options: JSONSerialization.WritingOptions = prettyPrint ? .prettyPrinted : []
+        let jsonData = try JSONSerialization.data(withJSONObject: JSON, options: options)
+        self = try JSONDecoder().decode(Self.self, from: jsonData)
     }
-
+    
 }
