@@ -19,7 +19,11 @@ extension DecodableValue {
     }
     
     public var int64Value: Int64? {
-        return value as? Int64
+        if let int = intValue {
+            return Int64(int)
+        } else {
+            return value as? Int64
+        }
     }
     
     public var uintValue: UInt? {
