@@ -18,6 +18,7 @@
 		85CE292A21143ED000F9A757 /* Codable+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292921143ED000F9A757 /* Codable+Transform.swift */; };
 		85CE292C2114421200F9A757 /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292B2114421200F9A757 /* TransformTests.swift */; };
 		85CE292E211442BE00F9A757 /* BoolTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292D211442BE00F9A757 /* BoolTransformer.swift */; };
+		85CE293021144EFF00F9A757 /* TransformedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292F21144EFF00F9A757 /* TransformedValue.swift */; };
 		85DC7B4020E5E28800D82BB4 /* SuperCodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */; };
 		85DC7B4420E6079700D82BB4 /* DecodableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4320E6079700D82BB4 /* DecodableValue.swift */; };
 		85DC7B4620E6233E00D82BB4 /* DecodableValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4520E6233E00D82BB4 /* DecodableValueTests.swift */; };
@@ -49,6 +50,7 @@
 		85CE292921143ED000F9A757 /* Codable+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Transform.swift"; sourceTree = "<group>"; };
 		85CE292B2114421200F9A757 /* TransformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformTests.swift; sourceTree = "<group>"; };
 		85CE292D211442BE00F9A757 /* BoolTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTransformer.swift; sourceTree = "<group>"; };
+		85CE292F21144EFF00F9A757 /* TransformedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformedValue.swift; sourceTree = "<group>"; };
 		85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCodableError.swift; sourceTree = "<group>"; };
 		85DC7B4320E6079700D82BB4 /* DecodableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableValue.swift; sourceTree = "<group>"; };
 		85DC7B4520E6233E00D82BB4 /* DecodableValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableValueTests.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				85CE29272114362600F9A757 /* TypeTransformer.swift */,
 				85CE292921143ED000F9A757 /* Codable+Transform.swift */,
 				85CE292D211442BE00F9A757 /* BoolTransformer.swift */,
+				85CE292F21144EFF00F9A757 /* TransformedValue.swift */,
 			);
 			name = Transform;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				85CE292A21143ED000F9A757 /* Codable+Transform.swift in Sources */,
 				85CE292E211442BE00F9A757 /* BoolTransformer.swift in Sources */,
 				85CE29282114362600F9A757 /* TypeTransformer.swift in Sources */,
+				85CE293021144EFF00F9A757 /* TransformedValue.swift in Sources */,
 				85DC7B4020E5E28800D82BB4 /* SuperCodableError.swift in Sources */,
 				8558C60C20E90B2900AB7B13 /* Dictionary+Helper.swift in Sources */,
 				85DC7B4820E634D500D82BB4 /* DecodableValue+Value.swift in Sources */,
