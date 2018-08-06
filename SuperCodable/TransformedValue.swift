@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct TransformedValue<T: DecodingContainerTransformer>: Decodable {
+public struct TransformedValue<T: DecodingContainerTransformer>: Codable {
     public let rawValue: DecodableValue
     public let value: T.TargetType
     
@@ -23,5 +23,9 @@ public struct TransformedValue<T: DecodingContainerTransformer>: Decodable {
             throw SuperCodableError.transformFaild(errorDescription: "input value don't match Transformer input type")
         }
     }
-
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(rawValue)
+    }
 }
