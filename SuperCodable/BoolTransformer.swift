@@ -10,13 +10,13 @@ import Foundation
 
 public class BoolTransformer: DecodingContainerTransformer {
     
-    public typealias Input = DecodableValue
+    public typealias Input = CodableValue
     public typealias TargetType = Bool
     
     public required init() {
     }
     
-    public func transform(_ decoded: DecodableValue) throws -> Bool {
+    public func transform(_ decoded: CodableValue) throws -> Bool {
         switch decoded {
         case .bool(let boolValue):
             return boolValue

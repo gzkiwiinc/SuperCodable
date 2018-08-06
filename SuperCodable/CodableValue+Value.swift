@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension DecodableValue {
+extension CodableValue {
     
     public var intValue: Int? {
         if case .uint(let uintValue) = self {
