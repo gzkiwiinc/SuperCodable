@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum DecodableValue: Decodable {
+public enum DecodableValue: Codable {
     indirect case dictionary([String: DecodableValue])
     indirect case array([DecodableValue])
     case null
@@ -66,6 +66,31 @@ public enum DecodableValue: Decodable {
         guard case .dictionary(let nestedDict) = firstValue else { return nil }
         return valueFor(keyPathComponents: keyPathComponents.dropFirst(), in: nestedDict)
     }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .array(let array):
+            try container.encode(array)
+        case .dictionary(let value):
+            try container.encode(value)
+        case .null:
+            try container.encodeNil()
+        case .bool(let value):
+            try container.encode(value)
+        case .uint(let value):
+            try container.encode(value)
+        case .int(let value):
+            try container.encode(value)
+        case .int64(let value):
+            try container.encode(value)
+        case .double(let value):
+            try container.encode(value)
+        case .string(let value):
+            try container.encode(value)
+        }
+    }
+    
 }
 
 

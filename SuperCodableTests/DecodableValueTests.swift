@@ -39,6 +39,20 @@ class JSONValueTests: XCTestCase {
         }
         XCTAssert(dict["userId"]!.intValue == 331061676730122)
     }
+    
+    func testEncode() {
+        let decoder = JSONDecoder()
+        let response = try! decoder.decode(ServerResponse.self, from: json)
+        XCTAssert(response.data.toJSONStringSafely()! == """
+            {"user":{"completed":true,"userId":331061676730122,"username":"富贵"}}
+            """)
+        
+        let array = DecodableValue.array([.int(1),.int(2)])
+        let dict = DecodableValue.dictionary(["custom": array])
+        XCTAssert(dict.toJSONStringSafely()! == """
+            {"custom":[1,2]}
+            """)
+    }
 
     func testGetReuglarValue() {
         let bool = DecodableValue.bool(true)
@@ -114,4 +128,5 @@ class JSONValueTests: XCTestCase {
         let nestData: [String: DecodableValue] = ["data": signleDecodable]
         XCTAssert(nestData.valueFor(key: "data.name")!.stringValue! == "kyle")
     }
+    
 }
