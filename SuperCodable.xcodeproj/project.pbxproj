@@ -14,10 +14,15 @@
 		856813C320E5D991005F9FA3 /* SuperCodable.h in Headers */ = {isa = PBXBuildFile; fileRef = 856813B520E5D990005F9FA3 /* SuperCodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		856813CF20E5DB7D005F9FA3 /* JSONConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813CE20E5DB7D005F9FA3 /* JSONConvert.swift */; };
 		8599EE7F20E9C63700E02806 /* ModelMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */; };
+		85CE29282114362600F9A757 /* TypeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE29272114362600F9A757 /* TypeTransformer.swift */; };
+		85CE292A21143ED000F9A757 /* Codable+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292921143ED000F9A757 /* Codable+Transform.swift */; };
+		85CE292C2114421200F9A757 /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292B2114421200F9A757 /* TransformTests.swift */; };
+		85CE292E211442BE00F9A757 /* BoolTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292D211442BE00F9A757 /* BoolTransformer.swift */; };
+		85CE293021144EFF00F9A757 /* TransformedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292F21144EFF00F9A757 /* TransformedValue.swift */; };
 		85DC7B4020E5E28800D82BB4 /* SuperCodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */; };
-		85DC7B4420E6079700D82BB4 /* DecodableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4320E6079700D82BB4 /* DecodableValue.swift */; };
-		85DC7B4620E6233E00D82BB4 /* DecodableValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4520E6233E00D82BB4 /* DecodableValueTests.swift */; };
-		85DC7B4820E634D500D82BB4 /* DecodableValue+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4720E634D500D82BB4 /* DecodableValue+Value.swift */; };
+		85DC7B4420E6079700D82BB4 /* CodableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4320E6079700D82BB4 /* CodableValue.swift */; };
+		85DC7B4620E6233E00D82BB4 /* CodableValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4520E6233E00D82BB4 /* CodableValueTests.swift */; };
+		85DC7B4820E634D500D82BB4 /* CodableValue+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4720E634D500D82BB4 /* CodableValue+Value.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +46,15 @@
 		856813C220E5D991005F9FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		856813CE20E5DB7D005F9FA3 /* JSONConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvert.swift; sourceTree = "<group>"; };
 		8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMappingTests.swift; sourceTree = "<group>"; };
+		85CE29272114362600F9A757 /* TypeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTransformer.swift; sourceTree = "<group>"; };
+		85CE292921143ED000F9A757 /* Codable+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Transform.swift"; sourceTree = "<group>"; };
+		85CE292B2114421200F9A757 /* TransformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformTests.swift; sourceTree = "<group>"; };
+		85CE292D211442BE00F9A757 /* BoolTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTransformer.swift; sourceTree = "<group>"; };
+		85CE292F21144EFF00F9A757 /* TransformedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformedValue.swift; sourceTree = "<group>"; };
 		85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCodableError.swift; sourceTree = "<group>"; };
-		85DC7B4320E6079700D82BB4 /* DecodableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableValue.swift; sourceTree = "<group>"; };
-		85DC7B4520E6233E00D82BB4 /* DecodableValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableValueTests.swift; sourceTree = "<group>"; };
-		85DC7B4720E634D500D82BB4 /* DecodableValue+Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecodableValue+Value.swift"; sourceTree = "<group>"; };
+		85DC7B4320E6079700D82BB4 /* CodableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableValue.swift; sourceTree = "<group>"; };
+		85DC7B4520E6233E00D82BB4 /* CodableValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableValueTests.swift; sourceTree = "<group>"; };
+		85DC7B4720E634D500D82BB4 /* CodableValue+Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodableValue+Value.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +99,10 @@
 			children = (
 				856813B520E5D990005F9FA3 /* SuperCodable.h */,
 				856813B620E5D990005F9FA3 /* Info.plist */,
+				85CE2926211435E100F9A757 /* Transform */,
 				85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */,
-				85DC7B4320E6079700D82BB4 /* DecodableValue.swift */,
-				85DC7B4720E634D500D82BB4 /* DecodableValue+Value.swift */,
+				85DC7B4320E6079700D82BB4 /* CodableValue.swift */,
+				85DC7B4720E634D500D82BB4 /* CodableValue+Value.swift */,
 				8558C60B20E90B2900AB7B13 /* Dictionary+Helper.swift */,
 				8524489620EDF0A100CF7649 /* Dictionary+Decodable.swift */,
 				856813CE20E5DB7D005F9FA3 /* JSONConvert.swift */,
@@ -104,10 +115,22 @@
 			children = (
 				856813C220E5D991005F9FA3 /* Info.plist */,
 				856813C020E5D991005F9FA3 /* DictionaryConvert.swift */,
-				85DC7B4520E6233E00D82BB4 /* DecodableValueTests.swift */,
+				85DC7B4520E6233E00D82BB4 /* CodableValueTests.swift */,
 				8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */,
+				85CE292B2114421200F9A757 /* TransformTests.swift */,
 			);
 			path = SuperCodableTests;
+			sourceTree = "<group>";
+		};
+		85CE2926211435E100F9A757 /* Transform */ = {
+			isa = PBXGroup;
+			children = (
+				85CE29272114362600F9A757 /* TypeTransformer.swift */,
+				85CE292921143ED000F9A757 /* Codable+Transform.swift */,
+				85CE292D211442BE00F9A757 /* BoolTransformer.swift */,
+				85CE292F21144EFF00F9A757 /* TransformedValue.swift */,
+			);
+			name = Transform;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,12 +242,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85DC7B4420E6079700D82BB4 /* DecodableValue.swift in Sources */,
+				85DC7B4420E6079700D82BB4 /* CodableValue.swift in Sources */,
 				8524489720EDF0A100CF7649 /* Dictionary+Decodable.swift in Sources */,
 				856813CF20E5DB7D005F9FA3 /* JSONConvert.swift in Sources */,
+				85CE292A21143ED000F9A757 /* Codable+Transform.swift in Sources */,
+				85CE292E211442BE00F9A757 /* BoolTransformer.swift in Sources */,
+				85CE29282114362600F9A757 /* TypeTransformer.swift in Sources */,
+				85CE293021144EFF00F9A757 /* TransformedValue.swift in Sources */,
 				85DC7B4020E5E28800D82BB4 /* SuperCodableError.swift in Sources */,
 				8558C60C20E90B2900AB7B13 /* Dictionary+Helper.swift in Sources */,
-				85DC7B4820E634D500D82BB4 /* DecodableValue+Value.swift in Sources */,
+				85DC7B4820E634D500D82BB4 /* CodableValue+Value.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +260,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				856813C120E5D991005F9FA3 /* DictionaryConvert.swift in Sources */,
-				85DC7B4620E6233E00D82BB4 /* DecodableValueTests.swift in Sources */,
+				85DC7B4620E6233E00D82BB4 /* CodableValueTests.swift in Sources */,
+				85CE292C2114421200F9A757 /* TransformTests.swift in Sources */,
 				8599EE7F20E9C63700E02806 /* ModelMappingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,37 +26,51 @@ class JSONValueTests: XCTestCase {
     
     struct ServerResponse: Decodable {
         let code: Int
-        let data: [String: DecodableValue]
+        let data: [String: CodableValue]
     }
     
     func testAnyDcitionaryParse() {
         let decoder = JSONDecoder()
         let response = try! decoder.decode(ServerResponse.self, from: json)
         let userData = response.data["user"]!
-        guard case DecodableValue.dictionary(let dict) = userData else {
+        guard case CodableValue.dictionary(let dict) = userData else {
             XCTFail()
             return
         }
         XCTAssert(dict["userId"]!.intValue == 331061676730122)
     }
+    
+    func testEncode() {
+        let decoder = JSONDecoder()
+        let response = try! decoder.decode(ServerResponse.self, from: json)
+        XCTAssert(response.data.toJSONStringSafely()! == """
+            {"user":{"completed":true,"userId":331061676730122,"username":"富贵"}}
+            """)
+        
+        let array = CodableValue.array([.int(1),.int(2)])
+        let dict = CodableValue.dictionary(["custom": array])
+        XCTAssert(dict.toJSONStringSafely()! == """
+            {"custom":[1,2]}
+            """)
+    }
 
     func testGetReuglarValue() {
-        let bool = DecodableValue.bool(true)
+        let bool = CodableValue.bool(true)
         XCTAssert(bool.boolValue! == true)
         
-        let string = DecodableValue.string("kiwi")
+        let string = CodableValue.string("kiwi")
         XCTAssert(string.stringValue! == "kiwi")
         
-        let int = DecodableValue.int(100)
+        let int = CodableValue.int(100)
         XCTAssert(int.intValue! == 100)
         
-        let uint = DecodableValue.uint(10)
+        let uint = CodableValue.uint(10)
         XCTAssert(uint.uintValue! == 10)
         
-        let double = DecodableValue.double(1.01)
+        let double = CodableValue.double(1.01)
         XCTAssert(double.doubleValue! == 1.01)
         
-        let nilValue = DecodableValue.null
+        let nilValue = CodableValue.null
         XCTAssert(nilValue.value == nil)
     }
     
@@ -82,7 +96,7 @@ class JSONValueTests: XCTestCase {
 ]
 """.data(using: .utf8)!
         let decoder = JSONDecoder()
-        let value = try! decoder.decode(DecodableValue.self, from: arrayJson)
+        let value = try! decoder.decode(CodableValue.self, from: arrayJson)
         XCTAssert(value.compactArray!.count == 4)
     }
     
@@ -95,23 +109,24 @@ class JSONValueTests: XCTestCase {
 }
 """.data(using: .utf8)!
         let decoder = JSONDecoder()
-        let value = try! decoder.decode(DecodableValue.self, from: dictJson)
+        let value = try! decoder.decode(CodableValue.self, from: dictJson)
         let dict = value.compactDictionary!
         XCTAssert(dict.count == 2)
     }
     
     func testSubscript() {
-        let singleDict: [String: DecodableValue] = ["name": DecodableValue.string("kyle")]
-        let signleDecodable = DecodableValue.dictionary(singleDict)
+        let singleDict: [String: CodableValue] = ["name": CodableValue.string("kyle")]
+        let signleDecodable = CodableValue.dictionary(singleDict)
         XCTAssert(signleDecodable["name"]!.stringValue! == "kyle")
-        let nestData = DecodableValue.dictionary(["data": signleDecodable])
+        let nestData = CodableValue.dictionary(["data": signleDecodable])
         XCTAssert(nestData["data.name"]!.stringValue! == "kyle")
     }
     
     func testKeypathInDictionary() {
-        let singleDict: [String: DecodableValue] = ["name": DecodableValue.string("kyle")]
-        let signleDecodable = DecodableValue.dictionary(singleDict)
-        let nestData: [String: DecodableValue] = ["data": signleDecodable]
+        let singleDict: [String: CodableValue] = ["name": CodableValue.string("kyle")]
+        let signleDecodable = CodableValue.dictionary(singleDict)
+        let nestData: [String: CodableValue] = ["data": signleDecodable]
         XCTAssert(nestData.valueFor(key: "data.name")!.stringValue! == "kyle")
     }
+    
 }

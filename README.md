@@ -9,5 +9,6 @@ pod 'SuperCodable'
 
 - [AnyCodable](https://github.com/Flight-School/AnyCodable)
 - [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper)
+- [CodableExtensions](https://github.com/jamesruston/CodableExtensions)
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
 

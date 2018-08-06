@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name         = 'SuperCodable'
-  s.version      = '0.2.0'
+  s.version      = '0.3.0'
   s.summary      = 'give Codable super power'
 
   s.description  = 'give Codable super power.'
