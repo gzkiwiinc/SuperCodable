@@ -47,7 +47,7 @@ class JSONValueTests: XCTestCase {
             {"user":{"completed":true,"userId":331061676730122,"username":"富贵"}}
             """)
         
-        let array = CodableValue.array([.int(1),.int(2)])
+        let array = CodableValue.array([.integer(1),.integer(2)])
         let dict = CodableValue.dictionary(["custom": array])
         XCTAssert(dict.toJSONStringSafely()! == """
             {"custom":[1,2]}
@@ -61,10 +61,10 @@ class JSONValueTests: XCTestCase {
         let string = CodableValue.string("kiwi")
         XCTAssert(string.stringValue! == "kiwi")
         
-        let int = CodableValue.int(100)
+        let int = CodableValue.integer(100)
         XCTAssert(int.intValue! == 100)
         
-        let uint = CodableValue.uint(10)
+        let uint = CodableValue.integer(10)
         XCTAssert(uint.uintValue! == 10)
         
         let double = CodableValue.double(1.01)
