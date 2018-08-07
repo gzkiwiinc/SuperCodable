@@ -14,9 +14,7 @@ public enum CodableValue: Codable {
     case null
     case bool(Bool)
     case string(String)
-    case int(Int)
-    case int64(Int64)
-    case uint(UInt)
+    case integer(IntegerType)
     case double(Double)
     
     public init(from decoder: Decoder) throws {
@@ -26,12 +24,10 @@ public enum CodableValue: Codable {
             self = .null
         } else if let bool = try? container.decode(Bool.self) {
             self = .bool(bool)
-        } else if let uint = try? container.decode(UInt.self) {
-            self = .uint(uint)
-        } else if let int = try? container.decode(Int.self) {
-            self = .int(int)
+        } else if let uint = try? container.decode(UInt64.self) {
+            self = .integer(uint)
         } else if let int64 = try? container.decode(Int64.self) {
-            self = .int64(int64)
+            self = .integer(int64)
         } else if let double = try? container.decode(Double.self) {
             self = .double(double)
         } else if let string = try? container.decode(String.self) {
@@ -78,12 +74,8 @@ public enum CodableValue: Codable {
             try container.encodeNil()
         case .bool(let value):
             try container.encode(value)
-        case .uint(let value):
-            try container.encode(value)
-        case .int(let value):
-            try container.encode(value)
-        case .int64(let value):
-            try container.encode(value)
+        case .integer(let integer):
+            try container.encode(integer)
         case .double(let value):
             try container.encode(value)
         case .string(let value):

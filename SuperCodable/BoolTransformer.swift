@@ -20,12 +20,15 @@ public class BoolTransformer: DecodingContainerTransformer {
         switch decoded {
         case .bool(let boolValue):
             return boolValue
-        case .int(let intValue):
-            return intValue > 0
-        case .int64(let intValue):
-            return intValue > 0
-        case .uint(let intValue):
-            return intValue > 0
+        case .integer(let integer):
+            if let int64 = integer.int64 {
+                return int64 > 0
+            } else if let uint64 = integer.uint64 {
+                return uint64 > 0
+            } else {
+                assertionFailure("can't get int value")
+                return false
+            }
         case .string(let stringValue):
             if stringValue == "true" || stringValue == "True" || stringValue == "TRUE" {
                 return true

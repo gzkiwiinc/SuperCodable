@@ -11,23 +11,35 @@ import Foundation
 extension CodableValue {
     
     public var intValue: Int? {
-        if case .uint(let uintValue) = self {
-            return Int(uintValue)
+        if case .integer(let integer) = self {
+            return integer.int
         } else {
-            return value as? Int
+            return nil
         }
     }
     
     public var int64Value: Int64? {
-        if let int = intValue {
-            return Int64(int)
+        if case .integer(let integer) = self {
+            return integer.int64
         } else {
-            return value as? Int64
+            return nil
         }
     }
     
     public var uintValue: UInt? {
-        return value as? UInt
+        if case .integer(let integer) = self {
+            return integer.uint
+        } else {
+            return nil
+        }
+    }
+    
+    public var uint64Value: UInt64? {
+        if case .integer(let integer) = self {
+            return integer.uint64
+        } else {
+            return nil
+        }
     }
     
     public var doubleValue: Double? {
@@ -50,12 +62,8 @@ extension CodableValue {
             return boolValue
         case .string(let stringValue):
             return stringValue
-        case .int(let intValue):
-            return intValue
-        case .int64(let int64Value):
-            return int64Value
-        case .uint(let uintValue):
-            return uintValue
+        case .integer(let integer):
+            return integer
         case .double(let doubleValue):
             return doubleValue
         case .array(let arrayValue):
