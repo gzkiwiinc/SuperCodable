@@ -12,6 +12,15 @@ public struct TransformedValue<T: DecodingContainerTransformer>: Codable {
     public let rawValue: CodableValue
     public let value: T.TargetType
     
+    public init(rawValue: CodableValue) throws {
+        self.rawValue = rawValue
+        if let input = rawValue.value as? T.Input {
+            value = try T().transform(input)
+        } else {
+            throw SuperCodableError.transformFaild(errorDescription: "input value don't match Transformer input type")
+        }
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         rawValue = try container.decode(CodableValue.self)
