@@ -19,6 +19,11 @@ public extension KeyedDecodingContainer {
     public func decode<T: Decodable>(_ key: KeyedDecodingContainer.Key) throws -> T {
         return try self.decode(T.self, forKey: key)
     }
+    
+    public func decode<T: Decodable>(forKey key: Key,
+                                     default defaultExpression: @autoclosure () -> T) throws -> T {
+        return try decodeIfPresent(T.self, forKey: key) ?? defaultExpression()
+    }
 }
 
 public extension KeyedEncodingContainer {
