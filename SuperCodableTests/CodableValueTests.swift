@@ -30,8 +30,7 @@ class JSONValueTests: XCTestCase {
     }
     
     func testAnyDcitionaryParse() {
-        let decoder = JSONDecoder()
-        let response = try! decoder.decode(ServerResponse.self, from: json)
+        let response: ServerResponse = try! json.decoded()
         let userData = response.data["user"]!
         guard case CodableValue.dictionary(let dict) = userData else {
             XCTFail()
@@ -95,8 +94,7 @@ class JSONValueTests: XCTestCase {
           }
 ]
 """.data(using: .utf8)!
-        let decoder = JSONDecoder()
-        let value = try! decoder.decode(CodableValue.self, from: arrayJson)
+        let value: CodableValue = try! arrayJson.decoded()
         XCTAssert(value.compactArray!.count == 4)
     }
     
@@ -108,8 +106,7 @@ class JSONValueTests: XCTestCase {
     "lng" : 119.9787132472559
 }
 """.data(using: .utf8)!
-        let decoder = JSONDecoder()
-        let value = try! decoder.decode(CodableValue.self, from: dictJson)
+        let value: CodableValue = try! dictJson.decoded()
         let dict = value.compactDictionary!
         XCTAssert(dict.count == 2)
     }

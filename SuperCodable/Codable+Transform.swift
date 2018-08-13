@@ -16,7 +16,7 @@ public extension KeyedDecodingContainer {
         return try transformer.transform(decoded)
     }
     
-    public func decode<T>(_ key: KeyedDecodingContainer.Key) throws -> T where T: Decodable {
+    public func decode<T: Decodable>(_ key: KeyedDecodingContainer.Key) throws -> T {
         return try self.decode(T.self, forKey: key)
     }
 }
