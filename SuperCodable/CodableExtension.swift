@@ -13,12 +13,14 @@ public protocol AnyDecoder {
 }
 
 extension JSONDecoder: AnyDecoder {}
+extension PropertyListDecoder: AnyDecoder {}
 
 public protocol AnyEncoder {
     func encode<T: Encodable>(_ value: T) throws -> Data
 }
 
 extension JSONEncoder: AnyEncoder {}
+extension PropertyListEncoder: AnyEncoder {}
 
 extension Data {
     public func decoded<T: Decodable>(using decoder: AnyDecoder = JSONDecoder()) throws -> T {
