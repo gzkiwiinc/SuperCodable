@@ -12,7 +12,7 @@ extension Encodable {
     
     /// Returns the JSON Dictionary for the object
     public func toJSON() throws -> [String: Any] {
-        let data = try JSONEncoder().encode(self)
+        let data = try self.encoded()
         let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
         return dictionary ?? [:]
     }
@@ -54,7 +54,7 @@ extension Decodable {
         let JSON = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
         let options: JSONSerialization.WritingOptions = prettyPrint ? .prettyPrinted : []
         let jsonData = try JSONSerialization.data(withJSONObject: JSON, options: options)
-        self = try JSONDecoder().decode(Self.self, from: jsonData)
+        self = try jsonData.decoded()
     }
     
 }
