@@ -12,15 +12,15 @@ public protocol AnyDecoder {
     func decode<T: Decodable>(_ type: T.Type, from data: Data) throws -> T
 }
 
-public extension JSONDecoder: AnyDecoder {}
-public extension PropertyListDecoder: AnyDecoder {}
+extension JSONDecoder: AnyDecoder {}
+extension PropertyListDecoder: AnyDecoder {}
 
 public protocol AnyEncoder {
     func encode<T: Encodable>(_ value: T) throws -> Data
 }
 
-public extension JSONEncoder: AnyEncoder {}
-public extension PropertyListEncoder: AnyEncoder {}
+extension JSONEncoder: AnyEncoder {}
+extension PropertyListEncoder: AnyEncoder {}
 
 extension Data {
     public func decoded<T: Decodable>(using decoder: AnyDecoder = JSONDecoder()) throws -> T {
