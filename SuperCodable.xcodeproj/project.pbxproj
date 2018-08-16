@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46B8F66CAFA5B38CF408AA76 /* Pods_SuperCodableTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4ADF1501DF29EA5B6B237D /* Pods_SuperCodableTests.framework */; };
 		8511198B21193EBB00513234 /* IntegerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511198A21193EBB00513234 /* IntegerType.swift */; };
 		8511198D21194BEF00513234 /* IntegerType+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511198C21194BEF00513234 /* IntegerType+Codable.swift */; };
 		8524489720EDF0A100CF7649 /* Dictionary+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524489620EDF0A100CF7649 /* Dictionary+Decodable.swift */; };
 		8558C60C20E90B2900AB7B13 /* Dictionary+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558C60B20E90B2900AB7B13 /* Dictionary+Helper.swift */; };
+		855E886721257BE8002EB49B /* Variable+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E886621257BE8002EB49B /* Variable+Codable.swift */; };
+		855E886A2125AEDB002EB49B /* RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E88692125AEDB002EB49B /* RxTests.swift */; };
 		856813BC20E5D991005F9FA3 /* SuperCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856813B220E5D990005F9FA3 /* SuperCodable.framework */; };
 		856813C120E5D991005F9FA3 /* DictionaryConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813C020E5D991005F9FA3 /* DictionaryConvert.swift */; };
 		856813C320E5D991005F9FA3 /* SuperCodable.h in Headers */ = {isa = PBXBuildFile; fileRef = 856813B520E5D990005F9FA3 /* SuperCodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,7 +21,7 @@
 		858EB4092121B64D00308D00 /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EB4082121B64D00308D00 /* CodableExtension.swift */; };
 		8599EE7F20E9C63700E02806 /* ModelMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */; };
 		85CE29282114362600F9A757 /* TypeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE29272114362600F9A757 /* TypeTransformer.swift */; };
-		85CE292A21143ED000F9A757 /* DecodingContainer+Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292921143ED000F9A757 /* DecodingContainer+Extansion.swift */; };
+		85CE292A21143ED000F9A757 /* DecodingContainer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292921143ED000F9A757 /* DecodingContainer+Extension.swift */; };
 		85CE292C2114421200F9A757 /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292B2114421200F9A757 /* TransformTests.swift */; };
 		85CE292E211442BE00F9A757 /* BoolTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292D211442BE00F9A757 /* BoolTransformer.swift */; };
 		85CE293021144EFF00F9A757 /* TransformedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292F21144EFF00F9A757 /* TransformedValue.swift */; };
@@ -26,6 +29,7 @@
 		85DC7B4420E6079700D82BB4 /* CodableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4320E6079700D82BB4 /* CodableValue.swift */; };
 		85DC7B4620E6233E00D82BB4 /* CodableValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4520E6233E00D82BB4 /* CodableValueTests.swift */; };
 		85DC7B4820E634D500D82BB4 /* CodableValue+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC7B4720E634D500D82BB4 /* CodableValue+Value.swift */; };
+		D384AFA3AEB5A314987BDE3D /* Pods_SuperCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A3E96D9B703B6FA33A9B52 /* Pods_SuperCodable.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35982234081AD99252B66795 /* Pods-SuperCodableTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCodableTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperCodableTests/Pods-SuperCodableTests.release.xcconfig"; sourceTree = "<group>"; };
+		4F4ADF1501DF29EA5B6B237D /* Pods_SuperCodableTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCodableTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8511198A21193EBB00513234 /* IntegerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerType.swift; sourceTree = "<group>"; };
 		8511198C21194BEF00513234 /* IntegerType+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntegerType+Codable.swift"; sourceTree = "<group>"; };
 		8524489620EDF0A100CF7649 /* Dictionary+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Decodable.swift"; sourceTree = "<group>"; };
 		8558C60B20E90B2900AB7B13 /* Dictionary+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Helper.swift"; sourceTree = "<group>"; };
+		855E886621257BE8002EB49B /* Variable+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Variable+Codable.swift"; sourceTree = "<group>"; };
+		855E88692125AEDB002EB49B /* RxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTests.swift; sourceTree = "<group>"; };
 		856813B220E5D990005F9FA3 /* SuperCodable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperCodable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		856813B520E5D990005F9FA3 /* SuperCodable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperCodable.h; sourceTree = "<group>"; };
 		856813B620E5D990005F9FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +61,7 @@
 		858EB4082121B64D00308D00 /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
 		8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMappingTests.swift; sourceTree = "<group>"; };
 		85CE29272114362600F9A757 /* TypeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTransformer.swift; sourceTree = "<group>"; };
-		85CE292921143ED000F9A757 /* DecodingContainer+Extansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecodingContainer+Extansion.swift"; sourceTree = "<group>"; };
+		85CE292921143ED000F9A757 /* DecodingContainer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecodingContainer+Extension.swift"; sourceTree = "<group>"; };
 		85CE292B2114421200F9A757 /* TransformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformTests.swift; sourceTree = "<group>"; };
 		85CE292D211442BE00F9A757 /* BoolTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTransformer.swift; sourceTree = "<group>"; };
 		85CE292F21144EFF00F9A757 /* TransformedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformedValue.swift; sourceTree = "<group>"; };
@@ -61,6 +69,10 @@
 		85DC7B4320E6079700D82BB4 /* CodableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableValue.swift; sourceTree = "<group>"; };
 		85DC7B4520E6233E00D82BB4 /* CodableValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableValueTests.swift; sourceTree = "<group>"; };
 		85DC7B4720E634D500D82BB4 /* CodableValue+Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodableValue+Value.swift"; sourceTree = "<group>"; };
+		90A3E96D9B703B6FA33A9B52 /* Pods_SuperCodable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCodable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1AF802E36E2E97DC2B60438 /* Pods-SuperCodable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCodable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperCodable/Pods-SuperCodable.debug.xcconfig"; sourceTree = "<group>"; };
+		EB65942F286878B7B16F50A7 /* Pods-SuperCodable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCodable.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperCodable/Pods-SuperCodable.release.xcconfig"; sourceTree = "<group>"; };
+		FF50C709E3E010997FB91448 /* Pods-SuperCodableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCodableTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperCodableTests/Pods-SuperCodableTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D384AFA3AEB5A314987BDE3D /* Pods_SuperCodable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,18 +89,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				856813BC20E5D991005F9FA3 /* SuperCodable.framework in Frameworks */,
+				46B8F66CAFA5B38CF408AA76 /* Pods_SuperCodableTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		855E886121251500002EB49B /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				855E886621257BE8002EB49B /* Variable+Codable.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
 		856813A820E5D990005F9FA3 = {
 			isa = PBXGroup;
 			children = (
 				856813B420E5D990005F9FA3 /* SuperCodable */,
 				856813BF20E5D991005F9FA3 /* SuperCodableTests */,
 				856813B320E5D990005F9FA3 /* Products */,
+				8873CA8277917AD261868B44 /* Pods */,
+				B78EA0B177CDE255ED386B28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,9 +127,10 @@
 		856813B420E5D990005F9FA3 /* SuperCodable */ = {
 			isa = PBXGroup;
 			children = (
+				855E886121251500002EB49B /* Rx */,
 				856813B520E5D990005F9FA3 /* SuperCodable.h */,
 				856813B620E5D990005F9FA3 /* Info.plist */,
-				85CE292921143ED000F9A757 /* DecodingContainer+Extansion.swift */,
+				85CE292921143ED000F9A757 /* DecodingContainer+Extension.swift */,
 				85CE2926211435E100F9A757 /* Transform */,
 				85DC7B3F20E5E28800D82BB4 /* SuperCodableError.swift */,
 				85DC7B4320E6079700D82BB4 /* CodableValue.swift */,
@@ -128,6 +153,7 @@
 				85DC7B4520E6233E00D82BB4 /* CodableValueTests.swift */,
 				8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */,
 				85CE292B2114421200F9A757 /* TransformTests.swift */,
+				855E88692125AEDB002EB49B /* RxTests.swift */,
 			);
 			path = SuperCodableTests;
 			sourceTree = "<group>";
@@ -140,6 +166,26 @@
 				85CE292F21144EFF00F9A757 /* TransformedValue.swift */,
 			);
 			name = Transform;
+			sourceTree = "<group>";
+		};
+		8873CA8277917AD261868B44 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1AF802E36E2E97DC2B60438 /* Pods-SuperCodable.debug.xcconfig */,
+				EB65942F286878B7B16F50A7 /* Pods-SuperCodable.release.xcconfig */,
+				FF50C709E3E010997FB91448 /* Pods-SuperCodableTests.debug.xcconfig */,
+				35982234081AD99252B66795 /* Pods-SuperCodableTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B78EA0B177CDE255ED386B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90A3E96D9B703B6FA33A9B52 /* Pods_SuperCodable.framework */,
+				4F4ADF1501DF29EA5B6B237D /* Pods_SuperCodableTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +206,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 856813C620E5D991005F9FA3 /* Build configuration list for PBXNativeTarget "SuperCodable" */;
 			buildPhases = (
+				84B9568775D87EB76ED9D63F /* [CP] Check Pods Manifest.lock */,
 				856813AD20E5D990005F9FA3 /* Sources */,
 				856813AE20E5D990005F9FA3 /* Frameworks */,
 				856813AF20E5D990005F9FA3 /* Headers */,
@@ -178,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 856813C920E5D991005F9FA3 /* Build configuration list for PBXNativeTarget "SuperCodableTests" */;
 			buildPhases = (
+				DBCC2AE324ADDC7CA8520EC6 /* [CP] Check Pods Manifest.lock */,
 				856813B720E5D991005F9FA3 /* Sources */,
 				856813B820E5D991005F9FA3 /* Frameworks */,
 				856813B920E5D991005F9FA3 /* Resources */,
+				64E638C44448B57F2740CF6A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +295,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		64E638C44448B57F2740CF6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SuperCodableTests/Pods-SuperCodableTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperCodableTests/Pods-SuperCodableTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84B9568775D87EB76ED9D63F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperCodable-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBCC2AE324ADDC7CA8520EC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperCodableTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		856813AD20E5D990005F9FA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -253,10 +359,11 @@
 			files = (
 				858EB4092121B64D00308D00 /* CodableExtension.swift in Sources */,
 				8511198B21193EBB00513234 /* IntegerType.swift in Sources */,
+				855E886721257BE8002EB49B /* Variable+Codable.swift in Sources */,
 				85DC7B4420E6079700D82BB4 /* CodableValue.swift in Sources */,
 				8524489720EDF0A100CF7649 /* Dictionary+Decodable.swift in Sources */,
 				856813CF20E5DB7D005F9FA3 /* JSONConvert.swift in Sources */,
-				85CE292A21143ED000F9A757 /* DecodingContainer+Extansion.swift in Sources */,
+				85CE292A21143ED000F9A757 /* DecodingContainer+Extension.swift in Sources */,
 				85CE292E211442BE00F9A757 /* BoolTransformer.swift in Sources */,
 				85CE29282114362600F9A757 /* TypeTransformer.swift in Sources */,
 				8511198D21194BEF00513234 /* IntegerType+Codable.swift in Sources */,
@@ -275,6 +382,7 @@
 				85DC7B4620E6233E00D82BB4 /* CodableValueTests.swift in Sources */,
 				85CE292C2114421200F9A757 /* TransformTests.swift in Sources */,
 				8599EE7F20E9C63700E02806 /* ModelMappingTests.swift in Sources */,
+				855E886A2125AEDB002EB49B /* RxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +519,7 @@
 		};
 		856813C720E5D991005F9FA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1AF802E36E2E97DC2B60438 /* Pods-SuperCodable.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -439,6 +548,7 @@
 		};
 		856813C820E5D991005F9FA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB65942F286878B7B16F50A7 /* Pods-SuperCodable.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -466,6 +576,7 @@
 		};
 		856813CA20E5D991005F9FA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF50C709E3E010997FB91448 /* Pods-SuperCodableTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -485,6 +596,7 @@
 		};
 		856813CB20E5D991005F9FA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35982234081AD99252B66795 /* Pods-SuperCodableTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
