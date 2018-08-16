@@ -18,7 +18,7 @@ public protocol DecodingContainerTransformer {
 }
 
 public protocol EncodingContainerTransformer {
-    associatedtype Input
+    associatedtype Input: Encodable
     associatedtype TargetType
     func transform(_ encoded: TargetType) throws -> Input
 }
