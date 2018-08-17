@@ -9,18 +9,21 @@
 import Foundation
 
 public protocol DecodingContainerTransformer {
-    associatedtype Input
+    associatedtype Input: Decodable
     associatedtype TargetType
     
-    func transform(_ decoded: Input) throws -> TargetType
-    
     init()
+
+    func transform(_ decoded: Input) throws -> TargetType
 }
 
 public protocol EncodingContainerTransformer {
     associatedtype Input: Encodable
     associatedtype TargetType
-    func transform(_ encoded: TargetType) throws -> Input
+    
+    init()
+
+    func transform(target: TargetType) throws -> Input
 }
 
 public typealias CodingContainerTransformer = DecodingContainerTransformer & EncodingContainerTransformer

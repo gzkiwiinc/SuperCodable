@@ -11,8 +11,9 @@ import XCTest
 
 class TransformTests: XCTestCase {
     
+    private let testStringDictionary = ["isValid": "true"]
+
     func testBoolTransformer() {
-        let testStringDictionary = ["isValid": "true"]
         var testBool = try! TestBool(JSON: testStringDictionary)
         XCTAssert(testBool.isValid == true)
         
@@ -30,7 +31,6 @@ class TransformTests: XCTestCase {
     }
     
     func testTransformedValue() {
-        let testStringDictionary = ["isValid": "true"]
         var testBool = try! TestTransformedValue(JSON: testStringDictionary)
         XCTAssert(testBool.isValid.value == true)
         
@@ -39,6 +39,14 @@ class TransformTests: XCTestCase {
         XCTAssert(testBool.isValid.value == true)
     }
 
+    func testTwoWayTransformed() {
+        let testBool = try! TwoWayBoolModel(JSON: testStringDictionary)
+        XCTAssert(testBool.isValid.target! == true)
+        XCTAssert(testBool.toJSONStringSafely()! == "{\"isValid\":\"true\"}")
+        
+        let falseBool = TwoWayBoolModel(isValid: TwoWayTransformed<BoolStringTransformer>(target: false))
+        XCTAssert(falseBool.toJSONStringSafely()! == "{\"isValid\":\"false\"}")
+    }
 }
 
 struct TestBool: Decodable {
@@ -56,4 +64,29 @@ struct TestBool: Decodable {
 
 struct TestTransformedValue: Decodable {
     let isValid: TransformedValue<BoolTransformer>
+}
+
+struct TwoWayBoolModel: Codable {
+    let isValid: TwoWayTransformed<BoolStringTransformer>
+}
+
+struct BoolStringTransformer: CodingContainerTransformer {
+    public typealias Input = String
+    public typealias TargetType = Bool
+    
+    init() {
+    }
+    
+    func transform(_ decoded: String) throws -> Bool {
+        if decoded == "true" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func transform(target: Bool) throws -> String {
+        return target ? "true" : "false"
+    }
+
 }
