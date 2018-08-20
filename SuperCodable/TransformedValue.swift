@@ -14,8 +14,8 @@ public struct TransformedValue<T: DecodingContainerTransformer>: Codable {
     
     public init(rawValue: CodableValue) throws {
         self.rawValue = rawValue
-        if let input = rawValue.value as? T.Input {
-            value = try T().transform(input)
+        if let input = rawValue.value as? T.DecodeType {
+            value = try T().transform(decoded: input)
         } else {
             throw SuperCodableError.transformFaild(errorDescription: "input value don't match Transformer input type")
         }
@@ -24,10 +24,10 @@ public struct TransformedValue<T: DecodingContainerTransformer>: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         rawValue = try container.decode(CodableValue.self)
-        if let input = rawValue as? T.Input { // Input is Decoable
-            value = try T().transform(input)
-        } else if let input = rawValue.value as? T.Input {
-            value = try T().transform(input)
+        if let input = rawValue as? T.DecodeType { // DecodeType is Decoable
+            value = try T().transform(decoded: input)
+        } else if let input = rawValue.value as? T.DecodeType {
+            value = try T().transform(decoded: input)
         } else {
             throw SuperCodableError.transformFaild(errorDescription: "input value don't match Transformer input type")
         }
