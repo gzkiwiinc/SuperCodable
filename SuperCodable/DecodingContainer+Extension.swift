@@ -10,7 +10,7 @@ import Foundation
 
 public extension KeyedDecodingContainer {
     public func decode<Transformer: DecodingContainerTransformer>(_ key: KeyedDecodingContainer.Key,
-                                                                  transformer: Transformer) throws -> Transformer.TargetType where Transformer.Input: Decodable {
+                                                                  transformer: Transformer) throws -> Transformer.TargetType {
         let decoded: Transformer.Input = try self.decode(key)
         
         return try transformer.transform(decoded)
@@ -26,12 +26,31 @@ public extension KeyedDecodingContainer {
     }
 }
 
+public extension SingleValueDecodingContainer {
+    public func decode<Transformer: DecodingContainerTransformer>(transformer: Transformer) throws -> Transformer.TargetType {
+        let decoded: Transformer.Input = try self.decode()
+        return try transformer.transform(decoded)
+    }
+    
+    public func decode<T: Decodable>() throws -> T {
+        return try self.decode(T.self)
+    }
+}
+
 public extension KeyedEncodingContainer {
     
     public mutating func encode<Transformer: EncodingContainerTransformer>(_ value: Transformer.TargetType,
                                                                            forKey key: KeyedEncodingContainer.Key,
-                                                                           transformer: Transformer) throws where Transformer.Input : Encodable {
-        let transformed: Transformer.Input = try transformer.transform(value)
+                                                                           transformer: Transformer) throws {
+        let transformed: Transformer.Input = try transformer.transform(target: value)
         try self.encode(transformed, forKey: key)
+    }
+}
+
+public extension UnkeyedEncodingContainer {
+    public mutating func encode<Transformer: EncodingContainerTransformer>(_ value: Transformer.TargetType,
+                                                                           transformer: Transformer) throws {
+        let transformed: Transformer.Input = try transformer.transform(target: value)
+        try self.encode(transformed)
     }
 }
