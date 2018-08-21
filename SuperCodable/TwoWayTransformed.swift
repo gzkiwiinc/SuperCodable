@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct TwoWayTransformed<T: CodingContainerTransformer>: Codable {
-    public var input: T.Input?
+public struct TwoWayTransformed<T: CodingContainerTransformer>: Codable where T.DecodeType: Codable, T.EncodeType: Encodable {
+    public var input: T.DecodeType?
     public var target: T.TargetType?
     
-    public init(input: T.Input) {
+    public init(input: T.DecodeType) {
         self.input = input
     }
     

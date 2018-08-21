@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol IntegerType {
+public protocol IntegerType: Decodable {
     var int: Int? { get }
     var int64: Int64? { get }
     var uint: UInt? { get }

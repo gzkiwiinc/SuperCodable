@@ -71,13 +71,11 @@ struct TwoWayBoolModel: Codable {
 }
 
 struct BoolStringTransformer: CodingContainerTransformer {
-    public typealias Input = String
-    public typealias TargetType = Bool
     
     init() {
     }
     
-    func transform(_ decoded: String) throws -> Bool {
+    func transform(decoded: String) throws -> Bool {
         if decoded == "true" {
             return true
         } else {
