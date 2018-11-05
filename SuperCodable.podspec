@@ -15,6 +15,11 @@ Pod::Spec.new do |s|
   s.source_files = 'SuperCodable/*.swift'
   s.ios.deployment_target = '8.0'
   s.requires_arc = true
+  s.default_subspec  = 'Codable'
+
+  s.subspec 'Codable' do |sp|
+    sp.source_files = 'SuperCodable/*.swift'
+  end
 
   s.subspec 'Rx' do |sp|
     sp.source_files = 'SuperCodable/Rx/*.swift'
@@ -24,6 +29,7 @@ Pod::Spec.new do |s|
   s.subspec 'RealmCache' do |sp|
     sp.source_files = 'SuperCodable/Realm/*.swift'
     sp.dependency 'RealmSwift'
+    sp.dependency 'SuperCodable/Codable'
   end
 
 end
