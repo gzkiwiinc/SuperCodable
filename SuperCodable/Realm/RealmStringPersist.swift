@@ -21,6 +21,10 @@ extension RealmStringPersist {
         return Self.realmTypeId + primaryKey
     }
     
+    static func generateRealPrimaryKey(key: String) -> String {
+        return Self.realmTypeId + key
+    }
+    
     func toRealmObject() -> RealmStringCacheModel {
         return RealmStringCacheModel(model: self)
     }
@@ -72,6 +76,19 @@ public extension RealmStringPersist where Self: Codable {
             return false
         }
     }
+
+    public static func loadFromCache(primaryKey: String, from realm: Realm? = nil) -> Self? {
+        var queryRealm: Realm!
+        if let realm = realm {
+            queryRealm = realm
+        } else if let realm = RealmCache.defaultRealm {
+            queryRealm = realm
+        } else {
+            return nil
+        }
+        guard let cacheModel = queryRealm.objects(RealmStringCacheModel.self).filter("primaryKey = %@", Self.generateRealPrimaryKey(key: primaryKey)).first else { return nil }
+        return try? Self(JSONString: cacheModel.stringValue)
+    }
     
     @discardableResult
     public func removeFromCache() -> Bool {
@@ -88,6 +105,23 @@ public extension RealmStringPersist where Self: Codable {
             return true
         } catch {
             return false
+        }
+    }
+    
+    public static func removeFromCache(primaryKey: String, from realm: Realm? = nil) {
+        var queryRealm: Realm!
+        if let realm = realm {
+            queryRealm = realm
+        } else if let realm = RealmCache.defaultRealm {
+            queryRealm = realm
+        } else {
+            return
+        }
+        try? queryRealm.write {
+            let reslut = queryRealm.objects(RealmStringCacheModel.self).filter("primaryKey = %@", Self.generateRealPrimaryKey(key: primaryKey))
+            if let object = reslut.first {
+                queryRealm.delete(object)
+            }
         }
     }
     
