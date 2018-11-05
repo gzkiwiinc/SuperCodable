@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name         = 'SuperCodable'
-  s.version      = '0.7.0'
+  s.version      = '0.8.0'
   s.summary      = 'give Codable super power'
 
   s.description  = 'give Codable super power.'
@@ -19,6 +19,11 @@ Pod::Spec.new do |s|
   s.subspec 'Rx' do |sp|
     sp.source_files = 'SuperCodable/Rx/*.swift'
     sp.dependency 'RxSwift', '~> 4.0'
+  end
+
+  s.subspec 'RealmCache' do |sp|
+    sp.source_files = 'SuperCodable/Realm/*.swift'
+    sp.dependency 'RealmSwift'
   end
 
 end
