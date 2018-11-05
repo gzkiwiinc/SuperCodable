@@ -16,7 +16,8 @@
 		855E886A2125AEDB002EB49B /* RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E88692125AEDB002EB49B /* RxTests.swift */; };
 		855E886C21266CCC002EB49B /* TwoWayTransformed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E886B21266CCC002EB49B /* TwoWayTransformed.swift */; };
 		85680B3C218FF57F00BEED60 /* RealmCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85680B3B218FF57F00BEED60 /* RealmCache.swift */; };
-		85680B3E218FF5D800BEED60 /* JSONStringCacheModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85680B3D218FF5D800BEED60 /* JSONStringCacheModel.swift */; };
+		85680B3E218FF5D800BEED60 /* RealmStringPersist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85680B3D218FF5D800BEED60 /* RealmStringPersist.swift */; };
+		85680B4021902DD800BEED60 /* RealmCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85680B3F21902DD800BEED60 /* RealmCacheTests.swift */; };
 		856813BC20E5D991005F9FA3 /* SuperCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856813B220E5D990005F9FA3 /* SuperCodable.framework */; };
 		856813C120E5D991005F9FA3 /* DictionaryConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813C020E5D991005F9FA3 /* DictionaryConvert.swift */; };
 		856813C320E5D991005F9FA3 /* SuperCodable.h in Headers */ = {isa = PBXBuildFile; fileRef = 856813B520E5D990005F9FA3 /* SuperCodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,7 +57,8 @@
 		855E88692125AEDB002EB49B /* RxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTests.swift; sourceTree = "<group>"; };
 		855E886B21266CCC002EB49B /* TwoWayTransformed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoWayTransformed.swift; sourceTree = "<group>"; };
 		85680B3B218FF57F00BEED60 /* RealmCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCache.swift; sourceTree = "<group>"; };
-		85680B3D218FF5D800BEED60 /* JSONStringCacheModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStringCacheModel.swift; sourceTree = "<group>"; };
+		85680B3D218FF5D800BEED60 /* RealmStringPersist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStringPersist.swift; sourceTree = "<group>"; };
+		85680B3F21902DD800BEED60 /* RealmCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCacheTests.swift; sourceTree = "<group>"; };
 		856813B220E5D990005F9FA3 /* SuperCodable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperCodable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		856813B520E5D990005F9FA3 /* SuperCodable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperCodable.h; sourceTree = "<group>"; };
 		856813B620E5D990005F9FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				85680B3B218FF57F00BEED60 /* RealmCache.swift */,
-				85680B3D218FF5D800BEED60 /* JSONStringCacheModel.swift */,
+				85680B3D218FF5D800BEED60 /* RealmStringPersist.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -170,6 +172,7 @@
 				8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */,
 				85CE292B2114421200F9A757 /* TransformTests.swift */,
 				855E88692125AEDB002EB49B /* RxTests.swift */,
+				85680B3F21902DD800BEED60 /* RealmCacheTests.swift */,
 			);
 			path = SuperCodableTests;
 			sourceTree = "<group>";
@@ -386,7 +389,7 @@
 				8524489720EDF0A100CF7649 /* Dictionary+Decodable.swift in Sources */,
 				856813CF20E5DB7D005F9FA3 /* JSONConvert.swift in Sources */,
 				855E886C21266CCC002EB49B /* TwoWayTransformed.swift in Sources */,
-				85680B3E218FF5D800BEED60 /* JSONStringCacheModel.swift in Sources */,
+				85680B3E218FF5D800BEED60 /* RealmStringPersist.swift in Sources */,
 				85CE292A21143ED000F9A757 /* DecodingContainer+Extension.swift in Sources */,
 				85CE292E211442BE00F9A757 /* BoolTransformer.swift in Sources */,
 				85CE29282114362600F9A757 /* TypeTransformer.swift in Sources */,
@@ -404,6 +407,7 @@
 			files = (
 				856813C120E5D991005F9FA3 /* DictionaryConvert.swift in Sources */,
 				85DC7B4620E6233E00D82BB4 /* CodableValueTests.swift in Sources */,
+				85680B4021902DD800BEED60 /* RealmCacheTests.swift in Sources */,
 				85CE292C2114421200F9A757 /* TransformTests.swift in Sources */,
 				8599EE7F20E9C63700E02806 /* ModelMappingTests.swift in Sources */,
 				855E886A2125AEDB002EB49B /* RxTests.swift in Sources */,
