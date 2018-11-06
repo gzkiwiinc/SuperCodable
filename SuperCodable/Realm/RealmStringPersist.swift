@@ -18,11 +18,12 @@ public protocol RealmStringPersist {
 
 extension RealmStringPersist {
     var realPrimaryKey: String {
-        return Self.realmTypeId + primaryKey
+        return "\(Self.realmTypeId)-\(primaryKey)"
+
     }
     
     static func generateRealPrimaryKey(key: String) -> String {
-        return Self.realmTypeId + key
+        return "\(Self.realmTypeId)-\(key)"
     }
     
     func toRealmObject() -> RealmStringCacheModel {
