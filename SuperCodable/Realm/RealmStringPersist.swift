@@ -26,8 +26,8 @@ extension RealmStringPersist {
         return "\(Self.realmTypeId)-\(key)"
     }
     
-    func toRealmObject() -> RealmStringCacheModel {
-        return RealmStringCacheModel(model: self)
+    func toRealmObject(sortPriority: Int) -> RealmStringCacheModel {
+        return RealmStringCacheModel(model: self, sortPriority: sortPriority)
     }
     
     public var persistDestination: Realm? {
@@ -40,12 +40,14 @@ class RealmStringCacheModel: Object {
     @objc dynamic var primaryKey = ""
     @objc dynamic var stringValue = ""
     @objc dynamic var typeId = ""
+    @objc dynamic var sortPriority = 0
 
-    convenience init(model: RealmStringPersist) {
+    convenience init(model: RealmStringPersist, sortPriority: Int = 0) {
         self.init()
         primaryKey = model.realPrimaryKey
         stringValue = model.persistedStringValue
         typeId = type(of: model).realmTypeId
+        self.sortPriority = sortPriority
     }
     
     override static func primaryKey() -> String? {
@@ -64,13 +66,13 @@ public extension RealmStringPersist where Self: Codable {
     }
     
     @discardableResult
-    public func save() -> Bool {
+    public func save(sortPriority: Int = 0) -> Bool {
         guard let realm = getRealmInstance() else {
             return false
         }
         do {
             try realm.write {
-                realm.add(toRealmObject(), update: true)
+                realm.add(toRealmObject(sortPriority: sortPriority), update: true)
             }
             return true
         } catch  {
@@ -89,6 +91,19 @@ public extension RealmStringPersist where Self: Codable {
         }
         guard let cacheModel = queryRealm.objects(RealmStringCacheModel.self).filter("primaryKey = %@", Self.generateRealPrimaryKey(key: primaryKey)).first else { return nil }
         return try? Self(JSONString: cacheModel.stringValue)
+    }
+    
+    public static func loadAll(from realm: Realm? = nil) -> [Self]? {
+        var queryRealm: Realm!
+        if let realm = realm {
+            queryRealm = realm
+        } else if let realm = RealmCache.defaultRealm {
+            queryRealm = realm
+        } else {
+            return nil
+        }
+        let result = queryRealm.objects(RealmStringCacheModel.self).filter("typeId = %@", Self.realmTypeId).sorted(byKeyPath: "sortPriority", ascending: false)
+        return result.compactMap { try? Self(JSONString: $0.stringValue) }
     }
     
     @discardableResult

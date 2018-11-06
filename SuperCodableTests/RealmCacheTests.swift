@@ -48,4 +48,16 @@ class RealmCacheTests: XCTestCase {
         model.removeFromCache()
         XCTAssertNil(TestModel.loadFromCache(primaryKey: primaryKey))
     }
+    
+    func testQuerySort() {
+        let model1 = TestModel(primaryKey: "A", name: "111")
+        let model2 = TestModel(primaryKey: "B", name: "222")
+        model1.save(sortPriority: 2)
+        model2.save(sortPriority: 1)
+        var firstModel = TestModel.loadAll()!.first!
+        XCTAssert(firstModel.primaryKey == "A")
+        model2.save(sortPriority: 5)
+        firstModel = TestModel.loadAll()!.first!
+        XCTAssert(firstModel.primaryKey == "B")
+    }
 }
