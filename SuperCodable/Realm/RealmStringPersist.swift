@@ -141,6 +141,27 @@ public extension RealmStringPersist where Self: Codable {
         }
     }
     
+    @discardableResult
+    public static func removeAll(from realm: Realm? = nil) -> Bool {
+        var queryRealm: Realm!
+        if let realm = realm {
+            queryRealm = realm
+        } else if let realm = RealmCache.defaultRealm {
+            queryRealm = realm
+        } else {
+            return false
+        }
+        do {
+            try queryRealm.write {
+                let result = queryRealm.objects(RealmStringCacheModel.self).filter("typeId = %@", Self.realmTypeId)
+                queryRealm.delete(result)
+            }
+            return true
+        } catch {
+            return false
+        }
+    }
+    
     private func getRealmInstance() -> Realm? {
         if let realm = persistDestination {
             return realm
