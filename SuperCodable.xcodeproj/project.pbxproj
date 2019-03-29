@@ -24,6 +24,7 @@
 		856813CF20E5DB7D005F9FA3 /* JSONConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856813CE20E5DB7D005F9FA3 /* JSONConvert.swift */; };
 		858EB4092121B64D00308D00 /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EB4082121B64D00308D00 /* CodableExtension.swift */; };
 		8599EE7F20E9C63700E02806 /* ModelMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */; };
+		85ACA9C1224DC08100DB1EE9 /* SuperCodable.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 85ACA9C0224DC08000DB1EE9 /* SuperCodable.podspec */; };
 		85CE29282114362600F9A757 /* TypeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE29272114362600F9A757 /* TypeTransformer.swift */; };
 		85CE292A21143ED000F9A757 /* DecodingContainer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292921143ED000F9A757 /* DecodingContainer+Extension.swift */; };
 		85CE292C2114421200F9A757 /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE292B2114421200F9A757 /* TransformTests.swift */; };
@@ -68,6 +69,7 @@
 		856813CE20E5DB7D005F9FA3 /* JSONConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvert.swift; sourceTree = "<group>"; };
 		858EB4082121B64D00308D00 /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
 		8599EE7E20E9C63700E02806 /* ModelMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMappingTests.swift; sourceTree = "<group>"; };
+		85ACA9C0224DC08000DB1EE9 /* SuperCodable.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SuperCodable.podspec; sourceTree = SOURCE_ROOT; };
 		85CE29272114362600F9A757 /* TypeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTransformer.swift; sourceTree = "<group>"; };
 		85CE292921143ED000F9A757 /* DecodingContainer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecodingContainer+Extension.swift"; sourceTree = "<group>"; };
 		85CE292B2114421200F9A757 /* TransformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformTests.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		856813B420E5D990005F9FA3 /* SuperCodable */ = {
 			isa = PBXGroup;
 			children = (
+				85ACA9C0224DC08000DB1EE9 /* SuperCodable.podspec */,
 				85680B3A218FF56200BEED60 /* Realm */,
 				855E886121251500002EB49B /* Rx */,
 				856813B520E5D990005F9FA3 /* SuperCodable.h */,
@@ -303,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85ACA9C1224DC08100DB1EE9 /* SuperCodable.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,21 +325,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SuperCodableTests/Pods-SuperCodableTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuperCodableTests/Pods-SuperCodableTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuperCodableTests/Pods-SuperCodableTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperCodableTests/Pods-SuperCodableTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SuperCodableTests/Pods-SuperCodableTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		84B9568775D87EB76ED9D63F /* [CP] Check Pods Manifest.lock */ = {
@@ -477,13 +476,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -535,12 +534,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -571,7 +570,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -599,7 +598,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KW.SuperCodable;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -619,7 +618,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KW.SuperCodableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -639,7 +638,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KW.SuperCodableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

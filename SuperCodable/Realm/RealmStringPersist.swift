@@ -57,16 +57,16 @@ class RealmStringCacheModel: Object {
 
 public extension RealmStringPersist where Self: Codable {
     
-    public var persistedStringValue: String {
+    var persistedStringValue: String {
         return self.toJSONStringSafely() ?? ""
     }
 
-    public static var realmTypeId: String {
+    static var realmTypeId: String {
         return String(describing: Self.self)
     }
     
     @discardableResult
-    public func save(sortPriority: Int = 0) -> Bool {
+    func save(sortPriority: Int = 0) -> Bool {
         guard let realm = getRealmInstance() else {
             return false
         }
@@ -80,7 +80,7 @@ public extension RealmStringPersist where Self: Codable {
         }
     }
 
-    public static func loadFromCache(primaryKey: String, from realm: Realm? = nil) -> Self? {
+    static func loadFromCache(primaryKey: String, from realm: Realm? = nil) -> Self? {
         var queryRealm: Realm!
         if let realm = realm {
             queryRealm = realm
@@ -93,7 +93,7 @@ public extension RealmStringPersist where Self: Codable {
         return try? Self(JSONString: cacheModel.stringValue)
     }
     
-    public static func loadAll(from realm: Realm? = nil) -> [Self]? {
+    static func loadAll(from realm: Realm? = nil) -> [Self]? {
         var queryRealm: Realm!
         if let realm = realm {
             queryRealm = realm
@@ -107,7 +107,7 @@ public extension RealmStringPersist where Self: Codable {
     }
     
     @discardableResult
-    public func removeFromCache() -> Bool {
+    func removeFromCache() -> Bool {
         guard let realm = getRealmInstance() else {
             return false
         }
@@ -124,7 +124,7 @@ public extension RealmStringPersist where Self: Codable {
         }
     }
     
-    public static func removeFromCache(primaryKey: String, from realm: Realm? = nil) {
+    static func removeFromCache(primaryKey: String, from realm: Realm? = nil) {
         var queryRealm: Realm!
         if let realm = realm {
             queryRealm = realm
@@ -142,7 +142,7 @@ public extension RealmStringPersist where Self: Codable {
     }
     
     @discardableResult
-    public static func removeAll(from realm: Realm? = nil) -> Bool {
+    static func removeAll(from realm: Realm? = nil) -> Bool {
         var queryRealm: Realm!
         if let realm = realm {
             queryRealm = realm
