@@ -5,10 +5,12 @@ target 'SuperCodable' do
   use_frameworks!
 
   pod 'RxSwift', '~> 4.0'
-
+  pod 'RealmSwift'
+  
   target 'SuperCodableTests' do
     inherit! :search_paths
 	  pod 'RxSwift', '~> 4.0'
+      pod 'RealmSwift'
   end
 
 end

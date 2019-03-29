@@ -8,8 +8,7 @@
 
 import Foundation
 
-extension Dictionary where Element == (key: String, value: CodableValue) {
-    
+extension Dictionary where Key == String, Value == CodableValue {
     /// The Key paramater can be a period separated string (ex. "distance.value") to access sub objects.
     public func valueFor(key: String) -> CodableValue? {
         let wrap = CodableValue.dictionary(self)
