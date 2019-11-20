@@ -72,7 +72,7 @@ public extension RealmStringPersist where Self: Codable {
         }
         do {
             try realm.write {
-                realm.add(toRealmObject(sortPriority: sortPriority), update: true)
+                realm.add(toRealmObject(sortPriority: sortPriority), update: .modified)
             }
             return true
         } catch  {
